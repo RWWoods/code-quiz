@@ -35,12 +35,34 @@ var answerQ4 = ["option4", "grey", "cow", "Bill"]
 var answerArray = [answerQ1, answerQ2, answerQ3, answerQ4]
 
 
+var timerEl = document.getElementById("top");
+
+var timeLeft = 5;
+function countdown() {
+    var timeInterval = setInterval(function () {
+        if (timeLeft > 1) {
+            timerEl.textContent = timeLeft + " seconds remaining";
+            timeLeft--
+        } else if (timeLeft === 1) {
+            timerEl.textContent = timeLeft + ' second remaining';
+            timeLeft--;
+        } else {
+            timerEl.textContent = '';
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+}
+
+
 startButton.addEventListener("click", startQuiz);
 answerButtons.addEventListener("click", nextQuestion);
+
+answerButtons.setAttribute("class", "visually-hidden")
+
 function nextQuestion() {
-++index;
+    ++index;
     if (index >= questionArray.length) {
-        alert("all questions are done!");       
+        alert("all questions are done!");
     } else {
         document.getElementById("initialText").innerHTML = questionArray[index]
         document.getElementById("answer1").innerHTML = answerQ1[index]
@@ -48,12 +70,14 @@ function nextQuestion() {
         document.getElementById("answer3").innerHTML = answerQ3[index]
         document.getElementById("answer4").innerHTML = answerQ4[index]
     }
-console.log("hello");
+    console.log("hello");
 
 }
 
 function startQuiz() {
-    console.log("hello");
+    answerButtons.removeAttribute("class", "visually-hidden");
+    nextQuestion()
+    countdown();
     event.preventDefault;
 }
-    
+
