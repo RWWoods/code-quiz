@@ -34,6 +34,14 @@ var timeLeft = 60;
 
 
 startButton.addEventListener("click", startQuiz);
+function startQuiz() {
+    event.preventDefault();
+    answerButtons.removeAttribute("class", "visually-hidden");
+    startButton.setAttribute("class", "visually-hidden")
+    nextQuestion()
+    countdown();
+}
+
 answerButtons.addEventListener("click", nextQuestion);
 answerButtons.setAttribute("class", "visually-hidden");
 isCorrect.setAttribute("class", "visually-hidden");
@@ -57,6 +65,7 @@ function countdown() {
 }
 
 function nextQuestion() {
+
     ++index;
     if (index >= questionArray.length) {
         alert("all questions are done!");
@@ -71,11 +80,5 @@ function nextQuestion() {
 
 }
 
-function startQuiz() {
-    answerButtons.removeAttribute("class", "visually-hidden");
-    startButton.setAttribute("class", "visually-hidden")
-    nextQuestion()
-    countdown();
-    event.preventDefault;
-}
+
 
