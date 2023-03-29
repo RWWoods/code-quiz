@@ -57,8 +57,8 @@ function countdown() {
 }
 
 
-function nextQuestion() {
-
+function nextQuestion(event) {
+    event.preventDefault();
     ++index;
     if (index >= questionArray.length) {
         alert("all questions are done!");
