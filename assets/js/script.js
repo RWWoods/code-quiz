@@ -12,8 +12,8 @@
 
 
 var startButton = document.getElementById("startButton");
-var quiz = document.getElementById("quizBox");
 var answerButtons = document.getElementById("answers");
+var isCorrect = document.getElementById("yesNo");
 var index = -1;
 var questions = document.getElementById("initialText").textContent;
 var question1 = "Question One"
@@ -21,23 +21,24 @@ var question2 = "Question Two"
 var question3 = "Question Three"
 var question4 = "Question Four"
 var questionArray = [question1, question2, question3, question4]
-var answerArray = document.getElementsByClassName("list-group-item");
-questions.innerHTML = questionArray[0];
-var answer1 = document.getElementById("answer1").textContent;
-var answer2 = document.getElementById("answer2");
-var answer3 = document.getElementById("answer3");
-var answer4 = document.getElementById("answer4");
-var optionsArray = [answer1, answer2, answer3, answer4]
 var answerQ1 = ["option1", "red", "dog", "Joe"]
 var answerQ2 = ["option2", "blue", "cat", "Bob"]
 var answerQ3 = ["option3", "green", "pig", "Dave"]
 var answerQ4 = ["option4", "grey", "cow", "Bill"]
-var answerArray = [answerQ1, answerQ2, answerQ3, answerQ4]
-
-
 var timerEl = document.getElementById("top");
+var timeLeft = 60;
 
-var timeLeft = 5;
+
+
+
+
+
+startButton.addEventListener("click", startQuiz);
+answerButtons.addEventListener("click", nextQuestion);
+answerButtons.setAttribute("class", "visually-hidden");
+isCorrect.setAttribute("class", "visually-hidden");
+
+
 function countdown() {
     var timeInterval = setInterval(function () {
         if (timeLeft > 1) {
@@ -49,15 +50,11 @@ function countdown() {
         } else {
             timerEl.textContent = '';
             clearInterval(timeInterval);
+            answerButtons.setAttribute("class", "visually-hidden")
+            
         }
     }, 1000);
 }
-
-
-startButton.addEventListener("click", startQuiz);
-answerButtons.addEventListener("click", nextQuestion);
-
-answerButtons.setAttribute("class", "visually-hidden")
 
 function nextQuestion() {
     ++index;
@@ -76,6 +73,7 @@ function nextQuestion() {
 
 function startQuiz() {
     answerButtons.removeAttribute("class", "visually-hidden");
+    startButton.setAttribute("class", "visually-hidden")
     nextQuestion()
     countdown();
     event.preventDefault;

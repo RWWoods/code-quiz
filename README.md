@@ -3,46 +3,25 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+The goal of this project is to design a quiz that runs in browser and allows you to select multiple choice answers. Once complete you can record your initials and score in a locally stored high scores data set.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+To use this project, open the index.html in browser or follow the website link and click the start button. Each question can be answered by clicking one of the choices listed, but incorrect choices will remove time from the timer. Once all questions have been answered correctly or time runs out, your score will be equal to your time left.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+ 
+![alt text](assets/images/codequiz.png)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+I borrowed source code from module 5.16 in the UPENN LPS bootcamp repo to get the groundwork for the basic layout of the webpage. 
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+I also borrowed code from module 4.10 to help with the timer running in the project.
 
-If you followed tutorials, include links to those here as well.
+I used the [following link](https://stackoverflow.com/questions/19602292/looping-through-array-using-a-button) to help me figure out my nextQuestion() function, which was not behaving properly.
 
-https://stackoverflow.com/questions/19602292/looping-through-array-using-a-button
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+Standard MIT License.
