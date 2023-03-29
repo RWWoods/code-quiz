@@ -12,6 +12,35 @@
 
 
 var startButton = document.getElementById("startButton");
-console.log(startButton);
+var quiz = document.getElementById("quizBox");
+var answerButtons = document.getElementById("answers");
+var questionNum = 0;
+var choiceOptions = answerButtons.children;
+var questions = document.getElementById("initialText").textContent;
+var optionsArray = [answerButtons.children];
+var option1 = answerButtons.children[0].textContent;
+var option2 = answerButtons.children[1].textContent;
+var option3 = answerButtons.children[2].textContent;
+var option4 = answerButtons.children[3].textContent;
+var question1 = "Question One"
+var question2 = "Question Two"
+var question3 = "Question Three"
+var question4 = "Question Four"
+var questionArray = [question1, question2, question3, question4]
 
-console.log(startButton.innerText); 
+
+
+startButton.addEventListener("click", startQuiz);
+answerButtons.addEventListener("click", nextQuestion);
+function nextQuestion() {
+
+
+}
+
+function startQuiz() {
+    console.log("hello");
+    event.preventDefault;
+}
+    
+console.log(questions);
+
